@@ -2,10 +2,10 @@ import pygame
 import random
 
 # Define colors
-BLUE = (0, 0, 255)
+BLUE = (59, 85, 109)
 WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
+BLACK = (11, 22, 44)
+GREEN = (95, 194, 186)
 
 # Function to draw a single die
 def draw_single_die(screen, position, value, selected):
@@ -73,7 +73,7 @@ def animate_dice_roll(screen, dice_values, dice_states, font, button_rect, rolls
 
         # Draw the button
         pygame.draw.rect(screen, GREEN, button_rect, border_radius=10)
-        button_text = font.render('Roll', True, BLACK)
+        button_text = font.render('...', True, BLACK)
         screen.blit(button_text, (button_rect.x + 20, button_rect.y + 10))
 
         pygame.display.flip()
