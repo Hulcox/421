@@ -78,6 +78,7 @@ def save_game_result(won, try_count):
     with open('game_result.txt', 'a') as file:
         result = "Gagné" if won else "Perdu"
         file.write(f"Résultat: {result}, Nombre d'essais: {try_count}\n")
+    
 
 def get_last_game_result():
     try:
@@ -114,6 +115,7 @@ while running:
                 elif home_rect.collidepoint(x, y):  # Bouton "Retourner à la page d'accueil"
                     show_intro_page = True
                     save_game_result(check_combination(dice_values), try_count)
+                    try_count = 0
 
     screen.fill(BLACK)  # Set the background to black
 

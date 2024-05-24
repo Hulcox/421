@@ -1,2 +1,6 @@
 Résultat: Perdu, Nombre d'essais: 0
 Résultat: Perdu, Nombre d'essais: 1
+Résultat: Gagné, Nombre d'essais: 2
+Résultat: Gagné, Nombre d'essais: 10
+Résultat: Gagné, Nombre d'essais: 6
+Résultat: Perdu, Nombre d'essais: 1
