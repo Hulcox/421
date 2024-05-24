@@ -1,9 +1,8 @@
 import pygame
 import random
-from utils import display_message
 
 # Define colors
-RED = (255, 0, 0)
+BLUE = (0, 0, 255)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
@@ -11,12 +10,14 @@ GREEN = (0, 255, 0)
 # Function to draw a single die
 def draw_single_die(screen, position, value, selected):
     die_size = 100
+    corner_radius = 10  # Corner radius for the die
+
     x, y = position
 
-    # Draw the square for the die
-    pygame.draw.rect(screen, WHITE, (x, y, die_size, die_size))
+    # Draw the square for the die with rounded corners
+    pygame.draw.rect(screen, WHITE, (x, y, die_size, die_size), border_radius=corner_radius)
     if selected:
-        pygame.draw.rect(screen, RED, (x, y, die_size, die_size), 5)
+        pygame.draw.rect(screen, BLUE, (x, y, die_size, die_size), 5, border_radius=corner_radius)
 
     # Calculate the positions of the dots
     offset = die_size // 4
@@ -71,10 +72,9 @@ def animate_dice_roll(screen, dice_values, dice_states, font, button_rect, rolls
         draw_dice(screen, dice_values, dice_states)
 
         # Draw the button
-        pygame.draw.rect(screen, GREEN, button_rect)
+        pygame.draw.rect(screen, GREEN, button_rect, border_radius=10)
         button_text = font.render('Roll', True, BLACK)
         screen.blit(button_text, (button_rect.x + 20, button_rect.y + 10))
 
-        display_message(screen, f"Rolls left: {rolls_left}", font, WHITE)
         pygame.display.flip()
-        pygame.time.delay(200)  # Increase delay to make the animation slower
+        pygame.time.delay(100)  # Delay to show the animation
